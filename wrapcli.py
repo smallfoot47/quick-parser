@@ -1,5 +1,5 @@
 import sys
-import wrap
+import wrapper
 
 if len(sys.argv) < 5:
     
@@ -24,5 +24,5 @@ else:
     axe = sys.argv[5] if len(sys.argv) > 5 else ' '
     glue = sys.argv[6] if len(sys.argv) > 6 else ','
 
-wrapper = wrap.Wrapper(header=head, body_fmt=body_format, footer=foot, axe=axe, glue=glue)
+wrapper = wrapper.Wrapper(header=head, body_fmt=body_format, footer=foot, axe=axe, glue=glue)
 print(wrapper.Wrap(data_file))
