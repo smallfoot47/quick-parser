@@ -11,7 +11,6 @@ class Scripter:
             if len(snip) > 0:
 
                 if snip[0] == '~':
-                    
                     # pre-proc
                     pass
                 elif snip[0] == '-':

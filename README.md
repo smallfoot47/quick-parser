@@ -14,7 +14,7 @@
 <h4>Using command line arguments</h4>
 <code>python3 wrapcli.py [header] [body format] [unparsed data file] [footer] [token delimiter; default ' '] [body joiner; default ',']</code>
 
-<h3>wrap.py</h3>
+<h3>wrapper.py</h3>
 Contains a class named Wrapper with the same capabilities of wrapcli but as a python object
 <h4>Set(header, body_format, footer, axe, glue)</h4>
 <ul>
