@@ -1,3 +1,34 @@
-- {0} + {1}
-+ {4} {0}
-* {|{1}|}
+general lexicon
+    ~ => pre-processing: used for establishing local variables and intial operations
+    - => pre-subsitution: used for calculating results on record-level
+    + => post-subsitution: used for calculating results from output of record-level
+    * => post-processing: used for aggregate functions
+    anything else => comment/ignored
+
+    {variable} => value at 'variable'
+    [variable] => outputs 'variable'
+    [{variable}] => outputs value at 'variable'
+
+    {0}, {1}, .. {n} are reserved for record values at given index
+    {a..b} refers to all records from index a to index b (inclusive). a doesn't need be lesser than b
+    binary +,-,*,/ operators implicitly converts arguments into ints and produces a string output
+    |length| is a shorthand for length of string 'length'
+
+~{x},{y}
+    the ~ here denotes variables that exist within scope of this script
+    it can also denote operations done prior to processing in general
+
+    establishes x and y as variables in local scope
+-{{x} = int{0} + int{1}}
+    the - here denotes operations to be done prior to token subsitution per record
+
+    calculates x (string) as the sum of {0} + {1} numerically
++[x]{{y}={4}{0}}[y]
+    the + here denotes operations to be done immediately after token subsitution per record
+    
+    prints x, calculates y as the concatination of {4} and {0}, then prints y
+*[{|{1}|}]
+    the * here denotes operations done at the end of processing or as an aggregate over every record
+    
+    |{1}| here is a shorthand for the average of the 2nd column (index 1).
+    It then prints the evaluated value
